@@ -1,0 +1,8 @@
+prefix=/home/fangcheng/workspace/wbt_ws/src/webots_ros/cmake-build-debug/devel
+
+Name: webots_ros
+Description: Description of webots_ros
+Version: 2.1.1
+Cflags: -I/home/fangcheng/workspace/wbt_ws/src/webots_ros/cmake-build-debug/devel/include -I/home/fangcheng/workspace/wbt_ws/src/webots_ros/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs sensor_msgs message_runtime tf

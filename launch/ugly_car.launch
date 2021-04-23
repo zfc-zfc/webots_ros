@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- start ugly_car Webots -->
+  <arg name="no-gui" default="false," doc="Start Webots with minimal GUI"/>
+  <include file="$(find webots_ros)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no-gui" value="$(arg no-gui)"/>
+    <arg name="world" value="$(find webots_ros)/worlds/ugly_car_ros.wbt"/>
+  </include>
+<!-- start ros controller -->
+  <node pkg="webots_ros" type="ugly_car" name="ugly_car_controller" output="screen">
+  </node>
+<!-- start rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find webots_ros)/rviz_cfg/ugly_car.rviz" />
+</launch>
