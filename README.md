@@ -489,3 +489,13 @@ webots中**控制器**的名称(在这篇博客前面设置的参数--name=ugly_
 | 话题 | publisher (pub)  |  topic  | (to) subscriber |
 | 服务 | client (request) | service |  (from) server  |
 
+
+## 小车模型 ugly_car
+
+```
+roslaunch webots_ros ugly_car
+```
+
+![](images/screenshot.png)
+
+![](images/screenshot_1.png)
