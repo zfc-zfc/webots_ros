@@ -10,7 +10,7 @@
 
 https://github.com/cyberbotics/webots/releases/
 
-![image-20201125090026770](/home/fangcheng/.config/Typora/typora-user-images/image-20201125090026770.png)
+![image-20201125090026770](images/image-20201125090026770.png)
 
 下载deb包以后
 
@@ -70,13 +70,13 @@ source opt/ros/melodic/setup.zsh
 roslaunch webots_ros pioneer3at.launch
 ```
 
-![image-20201125090911035](/home/fangcheng/.config/Typora/typora-user-images/image-20201125090911035.png)
+![image-20201125090911035](images/image-20201125090911035.png)
 
 小车车会动起来到处跑
 
 此时查看webots发布的话题，有
 
-![image-20201125091151893](/home/fangcheng/.config/Typora/typora-user-images/image-20201125091151893.png)
+![image-20201125091151893](images/image-20201125091151893.png)
 
 * 键盘遥控机器人
 
@@ -84,7 +84,7 @@ roslaunch webots_ros pioneer3at.launch
 roslaunch webots_ros keyboard_teleop.launch
 ```
 
-<img src="/home/fangcheng/.config/Typora/typora-user-images/image-20201125095504799.png" alt="image-20201125095504799" style="zoom:90%;" />
+![](images/image-20201125095504799.png)
 
 通过这个命令会自动启动webots客户端，然后用鼠标选中webots界面，这时候利用键盘上的方向键就可以控制机器人前后左右移动了。而键盘的数据会发送在一个名为 ***“/XXX/keyboard/key”*** 的话题上。
 
@@ -99,7 +99,7 @@ Wizards-New Project Directory
 
 此目录存放新建的world模型及相关文件
 
-![image-20201125102320937](/home/fangcheng/.config/Typora/typora-user-images/image-20201125102320937.png)
+![image-20201125102320937](images/image-20201125102320937.png)
 
 点击第二个加号可以添加模型，模型可以搜索
 
@@ -109,7 +109,7 @@ Wizards-New Project Directory
 
 每次保存前记得点reload，save到指定路径即可。
 
-![image-20201125102526097](/home/fangcheng/.config/Typora/typora-user-images/image-20201125102526097.png)
+![image-20201125102526097](images/image-20201125102526097.png)
 
 
 ## 5.新建自己的控制器
@@ -117,7 +117,10 @@ Wizards-New Project Directory
 Wizards->New Robot Controller 菜单栏新建一个机器人控制器，保存为 ***my_controller*** 。这里支持C、C++、JAVA、MATLAB的语言进行新建，这时候会再右侧栏出现机器人控制器的编程界面。
 
 这里为了演示功能我直接复制了原有的 e-puck 控制器的内容，当我们对控制器进行编写完成以后，我们需要指定机器人使用我们新建的控制器,如下图所示，这时候选中我们自己新建的（***my_controller***）
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200406131940288.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NycDk5NzU3NjI4MA==,size_16,color_FFFFFF,t_70)
+
+![]()
+
+![在这里插入图片描述](images/123.png)
 
 
 
@@ -376,7 +379,7 @@ forceDependentSlip字段定义力依赖滑移(FDS)。当两物体相接触时，
 
 shape或solid同级的boundingObject要设置为Shape对应的名字，同时添加物理属性，如下
 
-![image-20201201073822007](/home/fangcheng/.config/Typora/typora-user-images/image-20201201073822007.png)
+![image-20201201073822007](images/image-20201201073822007.png)
 
 ### 问题：如何将IMU,gyro,accelerometer,compass组合
 
@@ -388,7 +391,7 @@ shape或solid同级的boundingObject要设置为Shape对应的名字，同时添
 * 如果要寻找该robot对应的传感器名称，可将代码写在一个控制器中，并在该robot下的控制器一栏选择该控制器
 * 能否将该小控制器写在外面的大控制器内部？
 
-![image-20201201113727244](/home/fangcheng/.config/Typora/typora-user-images/image-20201201113727244.png)
+![image-20201201113727244](images/image-20201201113727244.png)
 
 ### 问题：WorldInfo和ViewPoint的参数
 
@@ -400,7 +403,7 @@ ViewPoint中的follow可以填入机器人的名字，达到视角跟随机器�
 
 Webots的一个非常搞人的坑就是，它定义的坐标系y轴向上，在进行控制时注意进行必要的坐标变换。
 
-![image-20201202095904824](/home/fangcheng/.config/Typora/typora-user-images/image-20201202095904824.png)
+![image-20201202095904824](images/image-20201202095904824.png)
 
 ## 7. 新建ROS控制器
 
@@ -422,23 +425,23 @@ usr/local/webots/projects/default/controllers/ros/include
 路径里面将msg，srv拷贝到刚才的webots_ros里,如下
 ```
 
-![image-20201130085332700](/home/fangcheng/.config/Typora/typora-user-images/image-20201130085332700.png)
+![image-20201130085332700](images/image-20201130085332700.png)
 
 接着，在src目录新建ros控制器，以ugly_car.cpp为例
 
-![image-20201130085452810](/home/fangcheng/.config/Typora/typora-user-images/image-20201130085452810.png)
+![image-20201130085452810](images/image-20201130085452810.png)
 
 其内容和代码具体解释参见https://blog.csdn.net/crp997576280/article/details/106335919
 
 同时配置CMakeLists.txt，添加可执行文件和依赖
 
-![image-20201130085712453](/home/fangcheng/.config/Typora/typora-user-images/image-20201130085712453.png)
+![image-20201130085712453](images/image-20201130085712453.png)
 
 完成之后，编译工作空间，完成后，在建立好的模型中将controller修改为ros
 
-![image-20201130090337400](/home/fangcheng/.config/Typora/typora-user-images/image-20201130090337400.png)
+![image-20201130090337400](images/image-20201130090337400.png)
 
-![image-20201130090400364](/home/fangcheng/.config/Typora/typora-user-images/image-20201130090400364.png)
+![image-20201130090400364](images/image-20201130090400364.png)
 
 同时控制器参数部分输入
 
@@ -460,7 +463,7 @@ rosrun webots_ros ugly_car //小车就会动起来啦
 
 Webots以服务的方式与ROS节点进行数据交换，如上面的控制器，运行后 rosservice list 会出现
 
-![image-20201201012654985](/home/fangcheng/.config/Typora/typora-user-images/image-20201201012654985.png)
+![image-20201201012654985](images/image-20201201012654985.png)
 
 ROS 节点通过调用指定的服务来实现与webots数据交换,而这个服务的名称通常是
 
@@ -476,7 +479,7 @@ webots中**控制器**的名称(在这篇博客前面设置的参数--name=ugly_
 |   rossrv show   | 查看服务对应类型的数据结构，输出为请求(request)、分隔符、返回值(response) | float64 value --- bool success |
 | rosservice call |                          调用某服务                          |                                |
 
-![image-20201201013145647](/home/fangcheng/.config/Typora/typora-user-images/image-20201201013145647.png)
+![image-20201201013145647](images/image-20201201013145647.png)
 
 与publishers/subscribers的通信机制相比，services/clients通信机制是一种**双向**、**一对一**的**可靠**通信机制。
 当client发送一个“请求”（request）到service处，service会反馈一个“响应”（response）给client，这时的client就需要知道service的名称才能完成这种问答形式的通信机制。
