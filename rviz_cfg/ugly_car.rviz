@@ -42,7 +42,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -55,14 +55,14 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 0.6000000238418579
       Name: Axes
       Radius: 0.07999999821186066
       Reference Frame: map
-      Value: true
+      Value: false
     - Class: rviz/Axes
       Enabled: true
       Length: 0.4000000059604645
@@ -73,8 +73,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 1.2590110301971436
-        Min Value: -0.04444047808647156
+        Max Value: 98.7748031616211
+        Min Value: -99.67366790771484
         Value: true
       Axis: Z
       Channel Name: z
@@ -104,7 +104,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: ugly_car/sick
     Frame Rate: 30
   Name: root
   Tools:
@@ -128,25 +128,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 12.843452453613281
+      Distance: 16.067245483398438
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.6230239272117615
+        Y: 0.5867153406143188
+        Z: 1.3568896055221558
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.2153979539871216
+      Pitch: -1.0547966957092285
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.223576068878174
+      Yaw: 1.5703916549682617
     Saved: ~
 Window Geometry:
   Displays:
